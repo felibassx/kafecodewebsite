@@ -1,0 +1,100 @@
+﻿Codifica las clases para el siguiente modelo de datos.
+
+Nota:
+Nombra las clases en singular, después usando Entity Framework, crearemos las tablas de la base de datos con el nombre en plural.
+
+PK: Primary Key
+FK: Foreign Key
+
+Entidades:
+---------------------
+
+Categorias
+Propiedades:
+categoriaID (int) PK
+nombre (string)
+fechaCreacion (datetime)
+
+Productos
+Propiedades:
+productoID (int) PK
+nombre (string)
+imagen (byte[])
+tipoImagen (string)
+descripcion (string)
+precioLista (decimal)
+categoriaID (int) FK
+activo (bool)
+enAlmacen (bool)
+fechaCreacion (datetime)
+
+Usuarios
+Propiedades:
+usuarioID (int) PK
+nombre (string)
+usuario (string)
+password (string)
+direccion (string)
+telefono (string)
+email (string)
+totalVendido (decimal)
+
+Favoritos
+Propiedades:
+usuarioID (int) FK	- PK columna 1
+productoID (int) FK - PK columna 2
+
+Carritos
+Propiedades:
+carritoID (int) PK
+usuarioID (int) FK
+abierto (bool)
+fechaVenta (datetime)
+total (decimal)
+
+CarroDetalle
+Propiedades:
+carritoID (int) FK - PK columna 1
+productoID (int) FK - PK columna 2
+cantidad (int)
+precioUnitario (decimal)
+total (decimal)
+
+Comentarios
+Propiedades:
+comentarioID (int) PK
+usuarioID (int) FK
+productoID (int) FK
+texto (string)
+fecha (datetime)
+
+Promocion
+Propiedades:
+promoID (int) PK
+tipo (int)
+nombre (string)
+descuento (decimal)
+fechaIni (datetime)
+fechaFin (datetime)
+
+PromoDetalle
+Propiedades:
+promoID (int) FK - PK columna 1
+productoID (int) FK - PK columna 2
+
+Propiedades de navegación:
+------------------------------------------
+
+Categorias (1) ---- (muchos) productos
+Productos (muchos) ----- (1) Categorias
+Productos (1) ---- (muchos) Comentarios
+Usuarios (1) ---- (muchos) Carritos
+Usuarios (1) ---- (muchos) Favoritos
+Carritos (muchos) ---- (1) Usuarios
+Carritos (1) ---- (muchos) CarroDetalle
+CarroDetalle (muchos) ---- (1) Carritos
+CarroDetalle (1) ---- (1) Productos
+Promocion (1) ---- (muchos) PromoDetalle
+PromoDetalle (muchos) ---- (1) Promocion
+Favoritos (1) ---- (1) Productos
+
