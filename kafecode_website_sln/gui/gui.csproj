@@ -104,6 +104,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Landing\LandingAreaRegistration.cs" />
+    <Compile Include="Areas\Site\SiteAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoriasController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -111,7 +118,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Site\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
+    <Content Include="Areas\Landing\Views\web.config" />
     <None Include="packages.config" />
+    <Content Include="Areas\Admin\Views\Categorias\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Categorias\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Categorias\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Categorias\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Categorias\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Productos\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Productos\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Productos\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Productos\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Productos\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -121,6 +142,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Home\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Areas\Landing\Controllers\" />
+    <Folder Include="Areas\Landing\Models\" />
+    <Folder Include="Areas\Landing\Views\Shared\" />
+    <Folder Include="Areas\Site\Controllers\" />
+    <Folder Include="Areas\Site\Models\" />
+    <Folder Include="Areas\Site\Views\Shared\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>

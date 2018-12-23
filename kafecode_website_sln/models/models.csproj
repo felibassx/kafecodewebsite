@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Xml.Linq" />
@@ -51,8 +53,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Categoria.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="Initializer.cs" />
     <Compile Include="KafeCodeContext.cs" />
+    <Compile Include="SubMenu.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\DataAnnotationsPersonalizadas.cs" />

@@ -15,17 +15,23 @@ namespace models.Utils
 
         public ValidaValorPositivo()
         {
-            ErrorMessage = "El número Ingresado debe ser un valor positivo.";
+            ErrorMessage = "El número ingresado debe ser un valor positivo.";
         }
 
         public override bool IsValid(object value)
         {
-            var aEvaluar = (decimal)value;
-            if (aEvaluar >= 0)
-                return true;
-            else
+            try
+            {
+                var aEvaluar = (decimal)value;
+                if (aEvaluar >= 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
                 return false;
-
+            }
         }
 
     }

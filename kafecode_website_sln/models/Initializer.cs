@@ -11,7 +11,7 @@ namespace models
     /// <summary>
     /// Esta clase inicializará la base de datos en la primera ejecución de la aplicación
     /// </summary>
-    public class Initializer : CreateDatabaseIfNotExists<KafeCodeContext>
+    public class Initializer : DropCreateDatabaseAlways<KafeCodeContext>
     {
         /// <summary>
         /// a traves del método Seed insertaremos los datos semilla o iniciales para la aplicación
@@ -43,6 +43,7 @@ namespace models
                     nombre = "Campañas Adsword",
                     descrpcion = "Implementación de campañas Adswords, se crea un plan y se implementa",
                     imagen = Utils.Utils.getFileBytes("\\Images\\logo_adWords.png"),
+                    tipoImagen = "png",
                     precio = 100000.0m,
                     fechaCreacion = DateTime.Now,
                     esActivo = true,
@@ -52,6 +53,7 @@ namespace models
                     nombre = "Landing Pages",
                     descrpcion = "Crea tu Landing Page con nosotros, utilizamos la mejor tecnología de desarrollo web.",
                     imagen = Utils.Utils.getFileBytes("\\Images\\landing_page.jpg"),
+                    tipoImagen = "jpg",
                     precio = 100000.0m,
                     fechaCreacion = DateTime.Now,
                     esActivo = true,
@@ -61,6 +63,7 @@ namespace models
                     nombre = "Software a la medida",
                     descrpcion = "Tienes un proyecto de software para tu empres?, nosotros lo realizamos, tenemos un equipo informático de primer nivel.",
                     imagen = Utils.Utils.getFileBytes("\\Images\\software_factory.png"),
+                    tipoImagen = "png",
                     precio = 100000.0m,
                     fechaCreacion = DateTime.Now,
                     esActivo = true,

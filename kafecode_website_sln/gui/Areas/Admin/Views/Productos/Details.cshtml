@@ -1,0 +1,86 @@
+﻿@model models.Producto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Producto</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.categoria.nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.categoria.nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.imagen)
+            </dt>
+
+            <dd>
+                <img width="100" src="@Url.Action("GetImage", new { id = int.Parse(@Html.DisplayFor(model => model.productoID).ToString())})" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tipoImagen)
+            </dt>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.descrpcion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.descrpcion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.precio)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.precio)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.fechaCreacion)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fechaCreacion)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.esActivo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.esActivo)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.productoID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -40,6 +40,8 @@ namespace models
         [Required(ErrorMessage = "Debe agregar una imagen")]
         public byte[] imagen { get; set; }
 
+        public string tipoImagen { get; set; }
+
         [Required(ErrorMessage = "Debe ingresar una descripción para el producto")]
         [DisplayName("Descripción del Producto")]
         [DataType(DataType.MultilineText)]
