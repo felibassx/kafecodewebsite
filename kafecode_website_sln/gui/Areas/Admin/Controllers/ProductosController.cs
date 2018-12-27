@@ -50,17 +50,39 @@ namespace gui.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "productoID,nombre,imagen,descrpcion,precio,fechaCreacion,esActivo,categoriaID")] Producto producto)
+        public ActionResult Create(Producto p, HttpPostedFileBase imagen)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                db.Productos.Add(producto);
-                db.SaveChanges();
+                //db.Productos.Add(producto);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            else
+            {
+                p.fechaCreacion = DateTime.Now;
 
-            ViewBag.categoriaID = new SelectList(db.Categorias, "categoriaID", "nombre", producto.categoriaID);
-            return View(producto);
+                if (imagen != null)
+                    {
+                        p.tipoImagen = imagen.ContentType;
+                        p.imagen = new byte[imagen.ContentLength];
+                        imagen.InputStream.Read(p.imagen, 0, imagen.ContentLength);
+                    }
+                    //////////////////////////////
+                    Producto prod = db.Productos.Find(p.productoID);
+                    if (prod == null)
+                    {
+                        db.Productos.Add(p);
+                    }
+                    else
+                    {
+                        db.Entry(prod).CurrentValues.SetValues(p);
+                    }
+                    //////////////////////////////
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+            }
+            
         }
 
         // GET: Productoes/Edit/5

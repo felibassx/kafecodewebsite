@@ -122,6 +122,7 @@
     <Content Include="Areas\Site\Views\web.config" />
     <Content Include="Areas\Admin\Views\Default\Index.cshtml" />
     <Content Include="Areas\Landing\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\LayoutAdmin.cshtml" />
     <None Include="packages.config" />
     <Content Include="Areas\Admin\Views\Categorias\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Categorias\Delete.cshtml" />
@@ -142,9 +143,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Assets\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Home\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Landing\Controllers\" />
     <Folder Include="Areas\Landing\Models\" />
     <Folder Include="Areas\Landing\Views\Shared\" />
