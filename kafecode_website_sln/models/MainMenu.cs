@@ -20,6 +20,10 @@ namespace models
         [StringLength(50)]
         public string nombreMenu { get; set; }
 
+        [DisplayName("Link")]
+        [StringLength(400)]
+        public string urlMenuMain { get; set; }
+
         //Propiedad de navegacion que hace referencia los productos pertenecientes al Menu
         public virtual ICollection<SubMenu> subMenus { get; set; }
     }

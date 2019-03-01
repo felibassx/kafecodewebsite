@@ -59,7 +59,7 @@ namespace models
         [DisplayName("Fecha de creación del producto")]
         public DateTime fechaCreacion { get; set; }
 
-        [DisplayName("Producto está activo")]
+        [DisplayName("Producto está activo?")]
         public bool esActivo { get; set; }
 
 
